@@ -1,0 +1,40 @@
+.article {
+  margin: 120px 0px;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    .col {
+      &:nth-of-type(1) {
+        flex-basis: 10%;
+      }
+
+      &:nth-of-type(2) {
+        flex-basis: 90%;
+
+        .title {
+          padding: 30px 0px;
+        }
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px 0px;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column !important;
+  }
+
+  .info {
+    flex-direction: column !important;
+  }
+}

@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+  z-index: 99;
+
+  .main {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 350px;
+    height: 500px;
+    background-color: #e0f14d;
+    border-radius: 25px;
+  }
+}
