@@ -1,0 +1,22 @@
+.clock {
+  padding: 60px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    text-align: center;
+
+    .time {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 60px;
+      padding: 1rem 1.5rem;
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  .container > h2 {
+    margin-bottom: 15px;
+  }
+}

@@ -2,14 +2,28 @@ import Link from "next/link";
 import style from "./nav.module.scss";
 import { motion } from "framer-motion";
 import { perspective } from "@/app/utils/animations";
+import { useEffect, useState } from "react";
 
 const links = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
+  { title: "Contact", href: "/" },
+  { title: "daily@insight.com", href: "mailto:#" },
 ];
 
 export default function Nav() {
-  const date = new Date().toUTCString();
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const formattedTime = currentTime.toUTCString();
+
   return (
     <nav className={style.nav}>
       <div className={style.body}>
@@ -36,7 +50,7 @@ export default function Nav() {
         exit="exit"
         className={style.footer}
       >
-        <p>{date}</p>
+        <p>{formattedTime}</p>
       </motion.div>
     </nav>
   );

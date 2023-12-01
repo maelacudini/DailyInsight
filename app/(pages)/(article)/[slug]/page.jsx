@@ -1,17 +1,23 @@
+import Image from "next/image";
 import style from "./article.module.scss";
+import Link from "next/link";
 
 async function getData(id) {
   const res = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${process.env.API_KEY}`
+    `https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`
   );
-  const data = await res.json();
-  return data.results[id];
+  const articles = await res.json();
+  const totalArticles = articles.results.length;
+
+  return {
+    data: articles.results[id - 1],
+    totalArticles: totalArticles,
+  };
 }
 
 export default async function page({ params }) {
   const id = params.slug;
-  const articleIndex = parseInt(id, 10) - 1;
-  const data = await getData(articleIndex);
+  const { data, totalArticles } = await getData(id);
 
   //get date
   const dateString = data.published_date;
@@ -23,19 +29,43 @@ export default async function page({ params }) {
       <div className={style.row}>
         <div className={style.col}></div>
         <div className={style.col}>
-          <img
-            src={data.multimedia[0].url}
-            alt={data.title}
-            width={"100%"}
-            height={"auto"}
-            loading="lazy"
-          />
+          <div className={style.imgcontainer}>
+            <Image
+              src={data.multimedia[0].url}
+              alt={data.title}
+              loading="lazy"
+              placeholder="blur"
+              fill
+              blurDataURL={data.multimedia[0].url}
+            />
+          </div>
           <h2 className={style.title}>{data.title}</h2>
           <p>{data.abstract}</p>
 
           <div className={style.info}>
             <p>{day}</p>
             <p>{data.byline}</p>
+          </div>
+
+          <div className={style.footer}>
+            {id >= 2 && (
+              <Link
+                href={{
+                  pathname: `/${Number(id) - 1}`,
+                }}
+              >
+                Previous
+              </Link>
+            )}
+            {id < totalArticles && (
+              <Link
+                href={{
+                  pathname: `/${Number(id) + 1}`,
+                }}
+              >
+                Next
+              </Link>
+            )}
           </div>
         </div>
       </div>

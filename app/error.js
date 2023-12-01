@@ -7,16 +7,19 @@ export default function Error({ error, reset }) {
     }, [error])
 
     return (
-        <div>
-            <h2>Something went wrong!</h2>
-            <button
-                onClick={
-                    // Attempt to recover by trying to re-render the segment
-                    () => reset()
-                }
-            >
-                Try again
-            </button>
+        <div className='error'>
+            <div>
+                <h2 className='errortitle'>Something went wrong!</h2>
+                <button
+                    className='button'
+                    style={{ border: '1px solid black' }}
+                    onClick={
+                        () => reset()
+                    }
+                >
+                    Try again
+                </button>
+            </div>
         </div>
     )
 }

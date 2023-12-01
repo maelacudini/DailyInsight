@@ -3,5 +3,6 @@
 }
 
 .swiper-wrapper {
-  margin-bottom: 5%;
+  max-height: 260px !important;
+  margin-bottom: 40px;
 }
