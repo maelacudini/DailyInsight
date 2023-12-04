@@ -1,10 +1,10 @@
 import Image from "next/image";
-import style from "./article.module.scss";
+import style from "./technology.module.scss";
 import Link from "next/link";
 
-async function getData(id) {
+export async function getData(id) {
   const res = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`
+    `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.API_KEY}`
   );
   const articles = await res.json();
   const totalArticles = articles.results.length;

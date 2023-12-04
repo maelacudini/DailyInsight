@@ -2,14 +2,15 @@ import Link from "next/link";
 import style from "./article.module.scss";
 import Image from "next/image";
 
-export default function Article({ result, index }) {
+export default function Article({ result, index, topic }) {
   return (
     <article className={style.article}>
       <Link
         href={{
-          pathname: `/${index + 1}`,
+          pathname: `${topic}/${index + 1}`,
           query: {
             name: result.title,
+            topic: topic,
           },
         }}
       >

@@ -4,6 +4,6 @@ export default function robots() {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://acme.com/sitemap.xml',
+        sitemap: 'https://daily-insight-eight.vercel.app/sitemap.xml',
     }
 }

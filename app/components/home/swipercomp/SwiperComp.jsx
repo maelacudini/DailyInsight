@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-export default function SwiperComp({ results }) {
+export default function SwiperComp({ results, topic }) {
   return (
     <Swiper
       spaceBetween={30}
@@ -35,7 +35,7 @@ export default function SwiperComp({ results }) {
     >
       {results.map((result, index) => (
         <SwiperSlide key={result.url}>
-          <Article result={result} index={index} />
+          <Article result={result} index={index} topic={topic} />
         </SwiperSlide>
       ))}
     </Swiper>
