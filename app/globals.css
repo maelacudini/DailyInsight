@@ -67,7 +67,11 @@ a {
 .times {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  color: #e0f14d;
+  color: #ebf87a;
+}
+
+img {
+  border-radius: 5px;
 }
 
 /*error*/
@@ -85,11 +89,9 @@ a {
 
 /*loading*/
 .loading {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 /*recommended css Lenis */

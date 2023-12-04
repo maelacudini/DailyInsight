@@ -16,8 +16,8 @@ export default function Article({ result, index, topic }) {
       >
         <Image
           src={result.multimedia[0].url}
-          alt={result.title}
-          loading="lazy"
+          alt={result.multimedia[0].url}
+          loading={index === 1 ? "eager" : "lazy"}
           height="200"
           width="300"
           placeholder="blur"

@@ -20,18 +20,7 @@ export default function Header() {
         <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
       </motion.div>
 
-      <motion.h3
-        variants={title}
-        initial="initial"
-        animate={isActive ? "open" : "closed"}
-        transition={{
-          duration: 0.5,
-          type: "linear",
-          ease: [0.76, 0, 0.24, 1],
-        }}
-      >
-        Daily Insight
-      </motion.h3>
+      <h2>Daily Insight</h2>
       <Button isActive={isActive} setIsActive={setIsActive} />
     </header>
   );

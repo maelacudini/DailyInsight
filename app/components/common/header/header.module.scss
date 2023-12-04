@@ -8,14 +8,14 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(0.5em);
+  backdrop-filter: blur(0.3em);
   z-index: 98;
 
   ::before {
     content: "";
     width: 100%;
     height: 100%;
-    filter: blur(0.5em);
+    filter: blur(0.3em);
     position: absolute;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@
     top: 30px;
     width: 350px;
     height: 500px;
-    background-color: #e0f14d;
+    background-color: #ebf87a;
     border-radius: 25px;
   }
 }

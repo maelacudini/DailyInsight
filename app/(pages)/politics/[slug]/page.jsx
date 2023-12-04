@@ -34,9 +34,7 @@ export default async function page({ params }) {
               src={data.multimedia[0].url}
               alt={data.title}
               loading="lazy"
-              placeholder="blur"
               fill
-              blurDataURL={data.multimedia[0].url}
             />
           </div>
           <h2 className={style.title}>{data.title}</h2>
@@ -51,7 +49,7 @@ export default async function page({ params }) {
             {id >= 2 && (
               <Link
                 href={{
-                  pathname: `/${Number(id) - 1}`,
+                  pathname: `/politics/${Number(id) - 1}`,
                 }}
               >
                 Previous
@@ -60,7 +58,7 @@ export default async function page({ params }) {
             {id < totalArticles && (
               <Link
                 href={{
-                  pathname: `/${Number(id) + 1}`,
+                  pathname: `/politics/${Number(id) + 1}`,
                 }}
               >
                 Next

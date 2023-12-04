@@ -51,7 +51,7 @@ export default async function page({ params }) {
             {id >= 2 && (
               <Link
                 href={{
-                  pathname: `/${Number(id) - 1}`,
+                  pathname: `/business/${Number(id) - 1}`,
                 }}
               >
                 Previous
@@ -60,7 +60,7 @@ export default async function page({ params }) {
             {id < totalArticles && (
               <Link
                 href={{
-                  pathname: `/${Number(id) + 1}`,
+                  pathname: `/business/${Number(id) + 1}`,
                 }}
               >
                 Next

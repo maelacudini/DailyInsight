@@ -3,7 +3,7 @@ import style from "./footer.module.scss";
 
 export default function Footer() {
   return (
-    <footer className={style.footer}>
+    <footer id="footer" className={style.footer}>
       <div className={style.row}>
         <div className={style.col}>
           <h2>Want to collaborate?</h2>

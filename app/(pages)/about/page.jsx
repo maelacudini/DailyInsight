@@ -1,3 +1,4 @@
+import Image from "next/image";
 import style from "./about.module.scss";
 
 export default function page() {
@@ -20,6 +21,9 @@ export default function page() {
             in-depth analyses, or feature articles, we strive to deliver content
             that informs, engages, and empowers our diverse audience.
           </p>
+          <div className={style.imagecontainer}>
+            <Image src="/ny.webp" fill alt="nyc" loading="lazy" />
+          </div>
           <p>
             Our team of dedicated journalists and editors work tirelessly to
             bring you comprehensive and unbiased reporting. We adhere to the

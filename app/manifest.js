@@ -14,6 +14,12 @@ export default function manifest() {
                 type: 'image/x-icon',
                 purpose: "any maskable"
             },
+            {
+                src: '/icon.png',
+                sizes: '512x512',
+                type: 'image/png',
+                purpose: "any maskable"
+            },
         ],
     }
 }
