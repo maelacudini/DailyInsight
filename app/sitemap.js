@@ -36,7 +36,7 @@ export default async function sitemap() {
             priority: 0.6,
         }
     })
-    const politicsUrl = politics.results.map((post) => {
+    const politicsUrl = politics.results.map((post, index) => {
         return {
             url: `https://daily-insight-eight.vercel.app/${index}`,
             lastModified: new Date(),
@@ -44,7 +44,7 @@ export default async function sitemap() {
             priority: 0.6,
         }
     })
-    const technologyUrl = technology.results.map((post) => {
+    const technologyUrl = technology.results.map((post, index) => {
         return {
             url: `https://daily-insight-eight.vercel.app/${index}`,
             lastModified: new Date(),
