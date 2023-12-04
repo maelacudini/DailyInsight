@@ -26,8 +26,8 @@ export async function getTechnologyPosts() {
 
 export default async function sitemap() {
     const business = await getBusinessPosts();
-    const politics = await getBusinessPosts();
-    const technology = await getBusinessPosts();
+    const politics = await getPoliticsPosts();
+    const technology = await getTechnologyPosts();
     const businessUrl = business.map((post) => {
         return {
             url: `https://daily-insight-eight.vercel.app/${post.slug}`,
