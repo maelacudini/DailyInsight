@@ -1,4 +1,4 @@
-export default async function getBusinessPosts() {
+export async function getBusinessPosts() {
     const business = await fetch(`https://api.nytimes.com/svc/topstories/v2/business.json?api-key=${process.env.API_KEY}`)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
@@ -6,7 +6,7 @@ export default async function getBusinessPosts() {
     return business.json()
 }
 
-export default async function getPoliticsPosts() {
+export async function getPoliticsPosts() {
     const politics = await fetch(`https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
@@ -15,7 +15,7 @@ export default async function getPoliticsPosts() {
 }
 
 
-export default async function getTechnologyPosts() {
+export async function getTechnologyPosts() {
     const technology = await fetch(`https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.API_KEY}`)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
