@@ -3,7 +3,7 @@
 }
 
 .swiper-wrapper {
-  height: 330px !important;
+  height: 280px !important;
 }
 
 .swiper-pagination {
@@ -11,8 +11,14 @@
   bottom: 0 !important;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .swiper-wrapper {
     height: 300px !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .swiper-wrapper {
+    height: 320px !important;
   }
 }

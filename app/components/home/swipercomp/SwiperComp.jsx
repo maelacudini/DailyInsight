@@ -12,13 +12,16 @@ export default function SwiperComp({ results, topic }) {
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
-      slidesPerView={2}
+      slidesPerView={1}
       loop={true}
       pagination={{
         clickable: true,
         dynamicBullets: true,
       }}
       breakpoints={{
+        500: {
+          slidesPerView: 2,
+        },
         700: {
           slidesPerView: 3,
         },
