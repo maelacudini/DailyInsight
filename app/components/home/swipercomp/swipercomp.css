@@ -3,10 +3,16 @@
 }
 
 .swiper-wrapper {
-  max-height: 260px !important;
-  margin-bottom: 40px;
+  height: 330px !important;
 }
 
-.swiper-slide {
-  min-width: 270px !important;
+.swiper-pagination {
+  position: absolute !important;
+  bottom: 0 !important;
+}
+
+@media screen and (min-width: 600px) {
+  .swiper-wrapper {
+    height: 300px !important;
+  }
 }

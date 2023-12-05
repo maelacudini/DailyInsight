@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "./about.module.scss";
+import ny from "../../../public/ny.webp";
 
 export default function page() {
   return (
@@ -22,7 +23,7 @@ export default function page() {
             that informs, engages, and empowers our diverse audience.
           </p>
           <div className={style.imagecontainer}>
-            <Image src="/ny.webp" fill alt="nyc" loading="lazy" />
+            <Image src={ny} fill alt="nyc" placeholder="blur" />
           </div>
           <p>
             Our team of dedicated journalists and editors work tirelessly to
