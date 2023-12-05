@@ -11,9 +11,8 @@ export default function page() {
           <div className={style.col}></div>
           <div className={style.col}>
             <h2>
-              <span className="times">Daily Insight</span> was founded on the
-              belief that good, open conversations create great, meaningful
-              work.
+              Daily Insight was founded on the belief that good, open
+              conversations create great, meaningful work.
             </h2>
             <p>
               Welcome to Daily News, your trusted source for timely and reliable

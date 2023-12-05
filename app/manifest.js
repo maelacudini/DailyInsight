@@ -9,12 +9,6 @@ export default function manifest() {
         theme_color: '#2f2f2f',
         icons: [
             {
-                src: '/favicon.ico',
-                sizes: 'any',
-                type: 'image/x-icon',
-                purpose: "any maskable"
-            },
-            {
                 src: '/icon.png',
                 sizes: '512x512',
                 type: 'image/png',

@@ -12,6 +12,27 @@ export async function generateMetadata({ params }) {
     title: result.title,
     description: result.abstract,
     authors: [{ name: result.byline }],
+    publishedTime: result.published_date,
+    alternates: {
+      canonical: `/technology/${articleIndex}`,
+      languages: {
+        "en-US": "/en-US",
+      },
+    },
+    openGraph: {
+      title: result.title,
+      description: result.abstract,
+      images: [result.multimedia[0].url],
+      url: `https://daily-insight-eight.vercel.app/technology/${articleIndex}`,
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: result.title,
+      description: result.abstract,
+      images: [result.multimedia[0].url],
+    },
   };
 }
 
