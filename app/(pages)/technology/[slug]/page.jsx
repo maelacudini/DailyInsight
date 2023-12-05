@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export async function getData(id) {
   const res = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.API_KEY}`
+    `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.API_KEY}`,
+    { next: { revalidate: 86400 } }
   );
   const articles = await res.json();
   const totalArticles = articles.results.length;
