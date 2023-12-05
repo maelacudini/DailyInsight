@@ -1,0 +1,14 @@
+.slidingtext {
+  overflow: hidden;
+  position: relative;
+  margin: 30px -30px;
+
+  .container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: center;
+    margin: 0px 0px;
+  }
+}
