@@ -1,12 +1,9 @@
 'use client'
 import Lenis from "@studio-freight/lenis"
 import { useEffect, useState } from "react"
-import Loader from "./components/common/loader/Loader"
-import { AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation"
 
 export default function Template({ children }) {
-    const [loader, setLoader] = useState(true)
+    // const [loader, setLoader] = useState(true)
 
     useEffect(() => {
         const lenis = new Lenis()
@@ -15,13 +12,14 @@ export default function Template({ children }) {
             requestAnimationFrame(raf)
         }
         requestAnimationFrame(raf)
-        setTimeout(() => {
-            setLoader(false)
-        }, 2000);
+        // setTimeout(() => {
+        //     setLoader(false)
+        // }, 2000);
         return () => {
             lenis.destroy()
         }
     }, [])
 
-    return <AnimatePresence>{loader ? <Loader key='loader' /> : <div>{children}</div>}</AnimatePresence>
+    // return <AnimatePresence>{loader ? <Loader key='loader' /> : children}</AnimatePresence>
+    return <div>{children}</div>
 }

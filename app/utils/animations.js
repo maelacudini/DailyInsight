@@ -4,16 +4,17 @@ export const menu = {
         height: 500,
         right: 15,
         top: 15,
-        transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+        transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] }
     },
     closed: {
         height: 40,
         width: 80,
         right: 30,
         top: 30,
-        transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+        transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] }
     },
 };
+
 
 export const perspective = {
     initial: {
@@ -57,17 +58,6 @@ export const slideIn = {
     exit: {
         opacity: 0,
         transition: { duration: 0.5, type: "tween", ease: "easeInOut" }
-    }
-}
-
-export const title = {
-    open: {
-        x: -100,
-        opacity: 0
-    },
-    closed: {
-        x: 0,
-        opacity: 1
     }
 }
 

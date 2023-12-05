@@ -19,7 +19,9 @@ export default function Header() {
         initial="closed"
         className={style.menu}
       >
-        <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+        <AnimatePresence mode="wait">
+          {isActive && <Nav key="nav" />}
+        </AnimatePresence>
       </motion.div>
 
       <h2 onClick={() => router.push("/")}>Daily Insight</h2>
