@@ -16,9 +16,7 @@ export default async function Articles({ topic }) {
 
   return (
     <section className={style.articles}>
-      <h3 className={style.title}>
-        Top <span className="times">{topic}</span> stories of the day
-      </h3>
+      <h3 className={style.title}>Top {topic} stories of the day</h3>
 
       <SwiperComp results={data.results} topic={topic} />
     </section>

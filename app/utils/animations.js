@@ -7,8 +7,8 @@ export const menu = {
         transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
     },
     closed: {
-        width: 100,
         height: 40,
+        width: 80,
         right: 30,
         top: 30,
         transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },

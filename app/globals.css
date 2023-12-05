@@ -10,7 +10,7 @@
 body {
   margin: 0;
   padding: 30px;
-  background-color: #2f2f2f;
+  background-color: #232323;
   color: #ffffff;
 }
 
@@ -42,7 +42,7 @@ p {
 
 a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   font-weight: 300;
 }

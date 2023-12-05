@@ -41,7 +41,8 @@ export default async function page({ params }) {
             />
           </div>
           <h2 className={style.title}>{data.title}</h2>
-          <p>{data.abstract}</p>
+          <p className={style.abstract}>{data.abstract}</p>
+          <Link href={data.url}>Read more</Link>
 
           <div className={style.info}>
             <p>{day}</p>
