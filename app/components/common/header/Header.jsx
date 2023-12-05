@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "./button/Button";
 import style from "./header.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { menu, title } from "@/app/utils/animations";
+import { menu } from "@/app/utils/animations";
 import Nav from "./nav/Nav";
 import { useRouter } from "next/navigation";
 

@@ -70,3 +70,20 @@ export const title = {
         opacity: 1
     }
 }
+
+
+export const loader = {
+    initial: {
+        y: 0,
+        opacity: 0.1
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.3, type: "linear", ease: [0.76, 0, 0.24, 1] }
+    },
+    exit: {
+        y: '-100%',
+        transition: { duration: 0.5, type: "linear", ease: [0.76, 0, 0.24, 1] }
+    }
+}

@@ -4,5 +4,4 @@ const nextConfig = {
         domains: ['static01.nyt.com'],
     },
 }
-
-module.exports = nextConfig
+module.exports = nextConfig;
