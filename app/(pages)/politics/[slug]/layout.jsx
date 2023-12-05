@@ -23,7 +23,9 @@ export async function generateMetadata({ params }) {
       title: result.title,
       description: result.abstract,
       images: [result.multimedia[0].url],
-      url: `https://daily-insight-eight.vercel.app/politics/${articleIndex}`,
+      url: `https://daily-insight-eight.vercel.app/politics/${
+        articleIndex + 1
+      }`,
       locale: "en_US",
       type: "website",
     },
