@@ -9,7 +9,7 @@ export default function manifest() {
         theme_color: '#2f2f2f',
         icons: [
             {
-                src: '/icon.png',
+                src: 'https://daily-insight-eight.vercel.app/icon.png',
                 sizes: '512x512',
                 type: 'image/png',
                 purpose: "any maskable"
