@@ -40,9 +40,9 @@ export const perspective = {
     }
 }
 
-export const loader = {
+export const pagetransition = {
     initial: {
-        y: 0,
+        y: 20,
         opacity: 0.1
     },
     animate: {
@@ -51,7 +51,7 @@ export const loader = {
         transition: { duration: 0.3, type: "linear", ease: [0.76, 0, 0.24, 1] }
     },
     exit: {
-        y: '-100%',
+        y: -20,
         transition: { duration: 0.5, type: "linear", ease: [0.76, 0, 0.24, 1] }
     }
 }
