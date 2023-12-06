@@ -3,7 +3,7 @@ export async function generateMetadata({ params }) {
   const articleIndex = parseInt(id, 10) - 1;
   const res = await fetch(
     `https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`,
-    { next: { revalidate: 86400 } }
+    { next: "no-store" }
   );
   const data = await res.json();
   const result = data.results[articleIndex];

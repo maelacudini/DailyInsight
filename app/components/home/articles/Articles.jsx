@@ -5,7 +5,7 @@ async function getData(topic) {
   //revalidate every day
   const res = await fetch(
     `https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=${process.env.API_KEY}`,
-    { next: { revalidate: 86400 } }
+    { next: "no-store" }
   );
   return res.json();
 }

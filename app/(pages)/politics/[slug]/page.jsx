@@ -5,7 +5,7 @@ import Link from "next/link";
 export async function getData(id) {
   const res = await fetch(
     `https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`,
-    { next: { revalidate: 86400 } }
+    { next: "no-store" }
   );
   const articles = await res.json();
 
