@@ -14,27 +14,15 @@ export default function Article({ result, index, topic }) {
           },
         }}
       >
-        {result.multimedia && result.multimedia[0] ? (
-          <Image
-            src={result.multimedia[0].url}
-            alt={result.multimedia[0].url}
-            priority={index === 1 ? "true" : "false"}
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "200px" }}
-          />
-        ) : (
-          <Image
-            src="/ny.webp"
-            alt="no image for this article"
-            priority={index === 1 ? "true" : "false"}
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "200px" }}
-          />
-        )}
+        <Image
+          src={result.multimedia[0].url}
+          alt={result.multimedia[0].url}
+          priority={index === 1 ? "true" : "false"}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "200px" }}
+        />
 
         <p>{result.title}</p>
       </Link>

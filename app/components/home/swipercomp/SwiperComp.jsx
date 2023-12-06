@@ -32,9 +32,13 @@ export default function SwiperComp({ results, topic }) {
       modules={[Pagination]}
     >
       {results.map((result, index) => (
-        <SwiperSlide key={result.url}>
-          <Article result={result} index={index + 1} topic={topic} />
-        </SwiperSlide>
+        <div key={result.url}>
+          {result.multimedia && (
+            <SwiperSlide>
+              <Article result={result} index={index + 1} topic={topic} />
+            </SwiperSlide>
+          )}
+        </div>
       ))}
     </Swiper>
   );
