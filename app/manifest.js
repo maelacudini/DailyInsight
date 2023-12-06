@@ -10,7 +10,7 @@ export default function manifest() {
         icons: [
             {
                 src: 'https://daily-insight-eight.vercel.app/icon.png',
-                sizes: '13x22',
+                sizes: '77x146',
                 type: 'image/png',
                 purpose: "any maskable"
             },
