@@ -39,7 +39,7 @@ export const metadata = {
     card: "summary_large_image",
     title: 'For the people | Daily Insight',
     description: 'Daily Insight was founded on the belief that good, open conversations create great, meaningful work.',
-    images: ['https://daily-insight-eight.vercel.app/icon.png'],
+    images: ['https://daily-insight-eight.vercel.app/twitter-image.png'],
   },
   robots: {
     index: true,
