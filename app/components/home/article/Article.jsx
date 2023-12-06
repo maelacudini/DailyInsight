@@ -20,7 +20,7 @@ export default function Article({ result, index, topic }) {
           priority={index === 1 ? "true" : "false"}
           width={0}
           height={0}
-          sizes="100vw"
+          sizes="(max-width: 600px) 50vw, (max-width: 1000px) 25vw"
           style={{ width: "100%", height: "200px" }}
         />
 

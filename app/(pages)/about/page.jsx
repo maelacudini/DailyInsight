@@ -25,7 +25,13 @@ export default function page() {
               content that informs, engages, and empowers our diverse audience.
             </p>
             <div className={style.imagecontainer}>
-              <Image src={ny} fill alt="nyc" placeholder="blur" />
+              <Image
+                src={ny}
+                fill
+                alt="nyc"
+                placeholder="blur"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
