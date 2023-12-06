@@ -37,7 +37,6 @@ export default function Article({ result, index, topic }) {
         )}
 
         <p>{result.title}</p>
-        <p>{index}</p>
       </Link>
     </article>
   );
