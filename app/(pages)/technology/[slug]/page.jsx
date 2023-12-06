@@ -33,7 +33,7 @@ export default async function page({ params }) {
           <Image
             src={data.multimedia[0].url}
             alt={data.title}
-            loading="lazy"
+            priority
             width={0}
             height={0}
             sizes="100vw"
