@@ -33,7 +33,7 @@ export default function SwiperComp({ results, topic }) {
     >
       {results.map((result, index) => (
         <SwiperSlide key={result.url}>
-          <Article result={result} index={index} topic={topic} />
+          <Article result={result} index={index + 1} topic={topic} />
         </SwiperSlide>
       ))}
     </Swiper>

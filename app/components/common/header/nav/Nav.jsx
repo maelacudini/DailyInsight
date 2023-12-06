@@ -27,10 +27,10 @@ export default function Nav() {
     <nav className={style.nav}>
       <div className={style.body}>
         <motion.a
-          custom={0}
           variants={perspective}
+          custom={0}
           initial="initial"
-          animate="enter"
+          animate="animate"
           exit="exit"
           href="#footer"
         >
@@ -39,10 +39,10 @@ export default function Nav() {
         {links.map((link, index) => (
           <div key={index} className={style.linkcontainer}>
             <motion.div
-              custom={index + 1}
               variants={perspective}
+              custom={index + 1}
               initial="initial"
-              animate="enter"
+              animate="animate"
               exit="exit"
             >
               <Link href={link.href}>{link.title}</Link>
@@ -55,7 +55,7 @@ export default function Nav() {
         variants={perspective}
         custom={4}
         initial="initial"
-        animate="enter"
+        animate="animate"
         exit="exit"
         className={style.footer}
       >

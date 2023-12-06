@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
-import Button from "./button/Button";
 import style from "./header.module.scss";
-import { AnimatePresence, motion } from "framer-motion";
-import { menu } from "@/app/utils/animations";
 import Nav from "./nav/Nav";
+import Button from "./button/Button";
+import { menu } from "@/app/utils/animations";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -19,9 +19,7 @@ export default function Header() {
         initial="closed"
         className={style.menu}
       >
-        <AnimatePresence mode="wait">
-          {isActive && <Nav key="nav" />}
-        </AnimatePresence>
+        <AnimatePresence>{isActive && <Nav key="nav" />}</AnimatePresence>
       </motion.div>
 
       <h2 onClick={() => router.push("/")}>Daily Insight</h2>

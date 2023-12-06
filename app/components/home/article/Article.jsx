@@ -7,23 +7,37 @@ export default function Article({ result, index, topic }) {
     <article className={style.article}>
       <Link
         href={{
-          pathname: `${topic}/${index + 1}`,
+          pathname: `${topic}/${index}`,
           query: {
             name: result.title,
             topic: topic,
           },
         }}
       >
-        <Image
-          src={result.multimedia[0].url}
-          alt={result.multimedia[0].url}
-          loading={index === 1 ? "eager" : "lazy"}
-          height="200"
-          width="300"
-          placeholder="blur"
-          blurDataURL={result.multimedia[0].url}
-        />
+        {result.multimedia && result.multimedia[0] ? (
+          <Image
+            src={result.multimedia[0].url}
+            alt={result.multimedia[0].url}
+            priority={index === 1 ? "true" : "false"}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "200px" }}
+          />
+        ) : (
+          <Image
+            src="/ny.webp"
+            alt="no image for this article"
+            priority={index === 1 ? "true" : "false"}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "200px" }}
+          />
+        )}
+
         <p>{result.title}</p>
+        <p>{index}</p>
       </Link>
     </article>
   );

@@ -1,4 +1,3 @@
-import "react-loading-skeleton/dist/skeleton.css";
 import SwiperComp from "../swipercomp/SwiperComp";
 import style from "./articles.module.scss";
 

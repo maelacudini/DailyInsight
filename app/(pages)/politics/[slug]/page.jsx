@@ -29,14 +29,15 @@ export default async function page({ params }) {
       <div className={style.row}>
         <div className={style.col}></div>
         <div className={style.col}>
-          <div className={style.imgcontainer}>
-            <Image
-              src={data.multimedia[0].url}
-              alt={data.title}
-              loading="lazy"
-              fill
-            />
-          </div>
+          <Image
+            src={data.multimedia[0].url}
+            alt={data.title}
+            loading="lazy"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
           <h2 className={style.title}>{data.title}</h2>
           <p>{data.abstract}</p>
 
