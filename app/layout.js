@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: 'For the people | Daily Insight',
     description: 'Daily Insight was founded on the belief that good, open conversations create great, meaningful work.',
-    images: ['https://daily-insight-eight.vercel.app/icon.png'],
+    images: ['https://daily-insight-eight.vercel.app/opengraph-image.png'],
     url: `https://daily-insight-eight.vercel.app`,
     locale: "en_US",
     type: "website",
