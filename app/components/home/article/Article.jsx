@@ -31,8 +31,8 @@ export default function Article({ article, index, category }) {
               : images[randomNumber]
           }
           alt="image"
-          width={0}
-          height={0}
+          width={200}
+          height={200}
           sizes="50vw"
           style={{ width: "100%", height: "200px" }}
         />

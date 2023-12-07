@@ -43,8 +43,8 @@ export default async function page({ params }) {
             }
             alt="image"
             priority
-            width={0}
-            height={0}
+            width={200}
+            height={200}
             sizes="100vw"
             style={{ width: "100%", height: "300px", objectFit: "cover" }}
           />
