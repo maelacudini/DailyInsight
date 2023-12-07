@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: article.title && article.title,
-    description: article.content && article.content,
+    description: article.content !== null ? article.content : article.title,
     authors: [{ name: article.author && article.author }],
     publishedTime: article.publishedAt && article.publishedAt,
     alternates: {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: article.title && article.title,
-      description: article.content && article.content,
+      description: article.content !== null ? article.content : article.title,
       images: [article.urlToImage && article.urlToImage],
       url: `https://daily-insight-eight.vercel.app/business/${id}`,
       locale: "en_US",
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: article.title && article.title,
-      description: article.content && article.content,
+      description: article.content !== null ? article.content : article.title,
       images: [article.urlToImage && article.urlToImage],
     },
   };

@@ -33,7 +33,7 @@ export default function Article({ article, index, category }) {
           style={{ width: "100%", height: "200px" }}
         />
 
-        <p>{article.title}</p>
+        <p>{article.title.slice(0, 60)}...</p>
       </Link>
     </article>
   );
