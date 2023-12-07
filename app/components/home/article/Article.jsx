@@ -25,11 +25,7 @@ export default function Article({ article, index, category }) {
         }}
       >
         <Image
-          src={
-            article.urlToImage !== null
-              ? article.urlToImage
-              : images[randomNumber]
-          }
+          src={article.urlToImage || images[randomNumber]}
           alt="image"
           width={200}
           height={200}
