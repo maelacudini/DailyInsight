@@ -31,7 +31,6 @@ export default function Article({ article, index, category }) {
               : images[randomNumber]
           }
           alt="image"
-          priority={index === 1 ? "true" : "false"}
           width={0}
           height={0}
           sizes="50vw"
