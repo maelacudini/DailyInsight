@@ -28,7 +28,7 @@ export default async function sitemap() {
     const business = await getBusinessPosts();
     const science = await getSciencePosts();
     const technology = await getTechnologyPosts();
-    const businessUrl = business.results.map((post, index) => {
+    const businessUrl = business.articles.map((post, index) => {
         return {
             url: `https://daily-insight-eight.vercel.app/business/${index}`,
             lastModified: new Date(),
@@ -36,7 +36,7 @@ export default async function sitemap() {
             priority: 0.6,
         }
     })
-    const scienceUrl = science.results.map((post, index) => {
+    const scienceUrl = science.articles.map((post, index) => {
         return {
             url: `https://daily-insight-eight.vercel.app/science/${index}`,
             lastModified: new Date(),
@@ -44,7 +44,7 @@ export default async function sitemap() {
             priority: 0.6,
         }
     })
-    const technologyUrl = technology.results.map((post, index) => {
+    const technologyUrl = technology.articles.map((post, index) => {
         return {
             url: `https://daily-insight-eight.vercel.app/technology/${index}`,
             lastModified: new Date(),
