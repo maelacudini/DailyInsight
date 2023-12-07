@@ -36,11 +36,7 @@ export default async function page({ params }) {
         <div className={style.col}></div>
         <div className={style.col}>
           <Image
-            src={
-              article.urlToImage && id !== 0 && id !== 1
-                ? article.urlToImage
-                : images[randomNumber]
-            }
+            src={article.urlToImage || images[randomNumber]}
             alt="image"
             priority
             width={200}
