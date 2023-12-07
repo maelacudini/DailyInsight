@@ -1,22 +1,22 @@
 export async function getBusinessPosts() {
-    const business = await fetch(`https://api.nytimes.com/svc/topstories/v2/business.json?api-key=${process.env.API_KEY}`)
+    const business = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.NEWS_API}`)
     if (!business.ok) {
         throw new Error('Failed to fetch data')
     }
     return business.json()
 }
 
-export async function getPoliticsPosts() {
-    const politics = await fetch(`https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${process.env.API_KEY}`)
-    if (!politics.ok) {
+export async function getSciencePosts() {
+    const science = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=${process.env.NEWS_API}`)
+    if (!science.ok) {
         throw new Error('Failed to fetch data')
     }
-    return politics.json()
+    return science.json()
 }
 
 
 export async function getTechnologyPosts() {
-    const technology = await fetch(`https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.API_KEY}`)
+    const technology = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${process.env.NEWS_API}`)
     if (!technology.ok) {
         throw new Error('Failed to fetch data')
     }
@@ -26,27 +26,27 @@ export async function getTechnologyPosts() {
 
 export default async function sitemap() {
     const business = await getBusinessPosts();
-    const politics = await getPoliticsPosts();
+    const science = await getSciencePosts();
     const technology = await getTechnologyPosts();
-    const businessUrl = business.results.map((post, index) => {
+    const businessUrl = business.results.map((index) => {
         return {
-            url: `https://daily-insight-eight.vercel.app/business/${index + 1}`,
+            url: `https://daily-insight-eight.vercel.app/business/${index}`,
             lastModified: new Date(),
             changeFrequency: 'daily',
             priority: 0.6,
         }
     })
-    const politicsUrl = politics.results.map((post, index) => {
+    const scienceUrl = science.results.map((index) => {
         return {
-            url: `https://daily-insight-eight.vercel.app/politics/${index + 1}`,
+            url: `https://daily-insight-eight.vercel.app/science/${index}`,
             lastModified: new Date(),
             changeFrequency: 'daily',
             priority: 0.6,
         }
     })
-    const technologyUrl = technology.results.map((post, index) => {
+    const technologyUrl = technology.results.map((index) => {
         return {
-            url: `https://daily-insight-eight.vercel.app/technology/${index + 1}`,
+            url: `https://daily-insight-eight.vercel.app/technology/${index}`,
             lastModified: new Date(),
             changeFrequency: 'daily',
             priority: 0.6,
@@ -66,6 +66,6 @@ export default async function sitemap() {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
-        ...businessUrl, ...politicsUrl, ...technologyUrl
+        ...businessUrl, ...scienceUrl, ...technologyUrl
     ]
 }
