@@ -38,6 +38,7 @@ export default function Article({ article, index, category }) {
         />
 
         <p>{article.title}</p>
+        <p>{index}</p>
       </Link>
     </article>
   );

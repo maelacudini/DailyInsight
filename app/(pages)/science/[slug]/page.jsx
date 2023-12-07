@@ -63,7 +63,7 @@ export default async function page({ params }) {
           </div>
 
           <div className={style.footer}>
-            {id >= 2 && (
+            {id > 0 && (
               <Link
                 href={{
                   pathname: `/science/${Number(id) - 1}`,
@@ -72,7 +72,7 @@ export default async function page({ params }) {
                 Previous
               </Link>
             )}
-            {id < totalArticles && (
+            {id < 19 && (
               <Link
                 href={{
                   pathname: `/science/${Number(id) + 1}`,
