@@ -1,23 +1,22 @@
 import SwiperComp from "../swipercomp/SwiperComp";
 import style from "./articles.module.scss";
 
-async function getData(topic) {
-  //revalidate every day
+async function getData(category) {
   const res = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=${process.env.API_KEY}`,
+    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.NEWS_API}`,
     { next: "no-store" }
   );
   return res.json();
 }
 
-export default async function Articles({ topic }) {
-  const data = await getData(topic);
+export default async function Articles({ category }) {
+  const data = await getData(category);
 
   return (
     <section className={style.articles}>
-      <h3 className={style.title}>Top {topic} stories of the day</h3>
+      <h3 className={style.title}>Top {category} stories of the day</h3>
 
-      <SwiperComp results={data.results} topic={topic} />
+      <SwiperComp articles={data.articles} category={category} />
     </section>
   );
 }

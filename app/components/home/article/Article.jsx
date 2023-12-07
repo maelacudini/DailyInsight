@@ -2,29 +2,43 @@ import Link from "next/link";
 import style from "./article.module.scss";
 import Image from "next/image";
 
-export default function Article({ result, index, topic }) {
+const images = [
+  "/img.webp",
+  "/img1.webp",
+  "/img2.webp",
+  "/img3.webp",
+  "/img4.webp",
+];
+
+export default function Article({ article, index, category }) {
+  const randomNumber = Math.floor(Math.random() * images.length);
+
   return (
     <article className={style.article}>
       <Link
         href={{
-          pathname: `${topic}/${index}`,
+          pathname: `${category}/${index}`,
           query: {
-            name: result.title,
-            topic: topic,
+            name: article.title,
+            category: category,
           },
         }}
       >
         <Image
-          src={result.multimedia[0].url}
-          alt={result.multimedia[0].url}
+          src={
+            article.urlToImage !== null
+              ? article.urlToImage
+              : images[randomNumber]
+          }
+          alt={article.urlToImage !== null ? "image" : "random image"}
           priority={index === 1 ? "true" : "false"}
           width={0}
           height={0}
-          sizes="(max-width: 600px) 50vw, (max-width: 1000px) 25vw"
+          sizes="50vw"
           style={{ width: "100%", height: "200px" }}
         />
 
-        <p>{result.title}</p>
+        <p>{article.title}</p>
       </Link>
     </article>
   );

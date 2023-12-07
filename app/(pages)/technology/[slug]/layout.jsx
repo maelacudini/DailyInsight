@@ -1,39 +1,36 @@
 export async function generateMetadata({ params }) {
   const id = params.slug;
-  const articleIndex = parseInt(id, 10) - 1;
   const res = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${process.env.API_KEY}`,
+    `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${process.env.NEWS_API}`,
     { next: "no-store" }
   );
-  const data = await res.json();
-  const result = data.results[articleIndex];
+  const articles = await res.json();
+  const article = articles.articles[id];
 
   return {
-    title: result.title,
-    description: result.abstract,
-    authors: [{ name: result.byline }],
-    publishedTime: result.published_date,
+    title: article.title && article.title,
+    description: article.content && article.content,
+    authors: [{ name: article.author && article.author }],
+    publishedTime: article.publishedAt && article.publishedAt,
     alternates: {
-      canonical: `/technology/${articleIndex}`,
+      canonical: `/technology/${id}`,
       languages: {
         "en-US": "/en-US",
       },
     },
     openGraph: {
-      title: result.title,
-      description: result.abstract,
-      images: [result.multimedia[0].url],
-      url: `https://daily-insight-eight.vercel.app/technology/${
-        articleIndex + 1
-      }`,
+      title: article.title && article.title,
+      description: article.content && article.content,
+      images: [article.urlToImage && article.urlToImage],
+      url: `https://daily-insight-eight.vercel.app/technology/${id}`,
       locale: "en_US",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: result.title,
-      description: result.abstract,
-      images: [result.multimedia[0].url],
+      title: article.title && article.title,
+      description: article.content && article.content,
+      images: [article.urlToImage && article.urlToImage],
     },
   };
 }

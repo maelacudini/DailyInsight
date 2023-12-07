@@ -1,29 +1,34 @@
 import Image from "next/image";
-import style from "./business.module.scss";
+import style from "../../article.module.scss";
 import Link from "next/link";
+import { articleContent } from "@/app/utils/data";
 
 export async function getData(id) {
   const res = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/business.json?api-key=${process.env.API_KEY}`,
+    `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.NEWS_API}`,
     { next: "no-store" }
   );
   const articles = await res.json();
-  const totalArticles = articles.results.length;
+  const article = articles.articles[id];
 
   return {
-    data: articles.results[id - 1],
-    totalArticles: totalArticles,
+    article,
+    totalArticles: articles.totalResults,
   };
 }
 
-export default async function page({ params }) {
-  const id = params.slug;
-  const { data, totalArticles } = await getData(id);
+const images = [
+  "/img.webp",
+  "/img1.webp",
+  "/img2.webp",
+  "/img3.webp",
+  "/img4.webp",
+];
 
-  //get date
-  const dateString = data.published_date;
-  const dateObject = new Date(dateString);
-  const day = dateObject.toLocaleDateString();
+export default async function page({ params }) {
+  const randomNumber = Math.floor(Math.random() * images.length);
+  const id = params.slug;
+  const { article, totalArticles } = await getData(id);
 
   return (
     <div className={style.article}>
@@ -31,20 +36,30 @@ export default async function page({ params }) {
         <div className={style.col}></div>
         <div className={style.col}>
           <Image
-            src={data.multimedia[0].url}
-            alt={data.title}
+            src={
+              article.urlToImage !== null
+                ? article.urlToImage
+                : images[randomNumber]
+            }
+            alt={article.urlToImage !== null ? "image" : "random image"}
             priority
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "300px", objectFit: "cover" }}
           />
-          <h2 className={style.title}>{data.title}</h2>
-          <p>{data.abstract}</p>
+          <h2 className={style.title}>{article.title}</h2>
+          <p className={style.content}>
+            {article.content !== null && article.content.trim() !== ""
+              ? article.content
+              : articleContent[0]}
+          </p>
+
+          <Link href={article.url}>Read the full article</Link>
 
           <div className={style.info}>
-            <p>{day}</p>
-            <p>{data.byline}</p>
+            <p>{article.publishedAt}</p>
+            <p>{article.author}</p>
           </div>
 
           <div className={style.footer}>

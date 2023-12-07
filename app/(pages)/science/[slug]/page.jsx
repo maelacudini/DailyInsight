@@ -5,7 +5,7 @@ import { articleContent } from "@/app/utils/data";
 
 export async function getData(id) {
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${process.env.NEWS_API}`,
+    `https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=${process.env.NEWS_API}`,
     { next: "no-store" }
   );
   const articles = await res.json();
@@ -66,7 +66,7 @@ export default async function page({ params }) {
             {id >= 2 && (
               <Link
                 href={{
-                  pathname: `/technology/${Number(id) - 1}`,
+                  pathname: `/science/${Number(id) - 1}`,
                 }}
               >
                 Previous
@@ -75,7 +75,7 @@ export default async function page({ params }) {
             {id < totalArticles && (
               <Link
                 href={{
-                  pathname: `/technology/${Number(id) + 1}`,
+                  pathname: `/science/${Number(id) + 1}`,
                 }}
               >
                 Next

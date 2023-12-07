@@ -1,7 +1,7 @@
 export async function generateMetadata({ params }) {
   const id = params.slug;
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.NEWS_API}`,
+    `https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=${process.env.NEWS_API}`,
     { next: "no-store" }
   );
   const articles = await res.json();
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
     authors: [{ name: article.author && article.author }],
     publishedTime: article.publishedAt && article.publishedAt,
     alternates: {
-      canonical: `/business/${id}`,
+      canonical: `/science/${id}`,
       languages: {
         "en-US": "/en-US",
       },
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
       title: article.title && article.title,
       description: article.content && article.content,
       images: [article.urlToImage && article.urlToImage],
-      url: `https://daily-insight-eight.vercel.app/business/${id}`,
+      url: `https://daily-insight-eight.vercel.app/science/${id}`,
       locale: "en_US",
       type: "website",
     },

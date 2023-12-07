@@ -1,13 +1,15 @@
 "use client";
 import "./swipercomp.css";
 import Article from "../article/Article";
+import { v4 as uuidv4 } from "uuid";
 // had to separate swiper logic from articles component, since i am fetching data in articles component and here i need to use client side, cannot risk to show api key
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-export default function SwiperComp({ results, topic }) {
+export default function SwiperComp({ articles, category }) {
+  const randomId = uuidv4();
   return (
     <Swiper
       spaceBetween={30}
@@ -31,14 +33,10 @@ export default function SwiperComp({ results, topic }) {
       }}
       modules={[Pagination]}
     >
-      {results.map((result, index) => (
-        <div key={result.url}>
-          {result.multimedia && (
-            <SwiperSlide>
-              <Article result={result} index={index + 1} topic={topic} />
-            </SwiperSlide>
-          )}
-        </div>
+      {articles.map((article, index) => (
+        <SwiperSlide key={randomId + article.title}>
+          <Article article={article} index={index} category={category} />
+        </SwiperSlide>
       ))}
     </Swiper>
   );

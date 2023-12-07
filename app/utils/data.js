@@ -1,0 +1,3 @@
+export const articleContent = [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tortor eu lectus fermentum dapibus. Ut bibendum, nunc eu hendrerit tristique, enim nisi scelerisque risus, nec fermentum augue mauris vel erat. Proin facilisis libero eu ex sodales, ut euismod risus euismod. Nullam facilisis mauris et luctus luctus. Sed vel urna nec libero auctor fringilla. Maecenas nec urna vel libero gravida facilisis a id ex. Phasellus at diam at nisi euismod commodo. Curabitur et tortor sed libero congue volutpat nec et odio. Vivamu'
+]

@@ -87,6 +87,14 @@ img {
   margin-bottom: 30px;
 }
 
+/*not found */
+.notfound {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*loading*/
 .loading {
   height: 100vh;
