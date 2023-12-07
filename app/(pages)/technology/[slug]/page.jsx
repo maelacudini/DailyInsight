@@ -41,7 +41,7 @@ export default async function page({ params }) {
                 ? article.urlToImage
                 : images[randomNumber]
             }
-            alt={article.urlToImage !== null ? "image" : "random image"}
+            alt="image"
             priority
             width={0}
             height={0}

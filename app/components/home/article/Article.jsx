@@ -30,7 +30,7 @@ export default function Article({ article, index, category }) {
               ? article.urlToImage
               : images[randomNumber]
           }
-          alt={article.urlToImage !== null ? "image" : "random image"}
+          alt="image"
           priority={index === 1 ? "true" : "false"}
           width={0}
           height={0}
