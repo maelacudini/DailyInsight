@@ -15,15 +15,7 @@ export default function Article({ article, index, category }) {
 
   return (
     <article className={style.article}>
-      <Link
-        href={{
-          pathname: `${category}/${index}`,
-          query: {
-            name: article.title,
-            category: category,
-          },
-        }}
-      >
+      <Link href={`article/${category}/${index}`}>
         <Image
           src={article.urlToImage || images[randomNumber]}
           alt="image"
