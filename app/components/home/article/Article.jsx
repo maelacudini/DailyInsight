@@ -17,7 +17,7 @@ export default function Article({ article, index, category }) {
     <article className={style.article}>
       <Link href={`article/${category}/${index}`}>
         <Image
-          src={article.urlToImage || images[randomNumber]}
+          src={article.urlToImage ? article.urlToImage : images[randomNumber]}
           alt="image"
           width={200}
           height={200}
