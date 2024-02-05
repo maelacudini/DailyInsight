@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const links = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
+  { title: "Contact", href: "#footer" },
   { title: "daily@insight.com", href: "mailto:" },
 ];
 
@@ -26,16 +27,6 @@ export default function Nav() {
   return (
     <nav className={style.nav}>
       <div className={style.body}>
-        <motion.a
-          variants={perspective}
-          custom={0}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          href="#footer"
-        >
-          Contact
-        </motion.a>
         {links.map((link, index) => (
           <div key={index} className={style.linkcontainer}>
             <motion.div

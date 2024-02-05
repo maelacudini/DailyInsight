@@ -4,7 +4,7 @@ import style from "./articles.module.scss";
 async function getData(category) {
   const res = await fetch(
     `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.NEWS_API}`,
-    { next: "no-store" }
+    { cache: "no-store" }
   );
   return res.json();
 }

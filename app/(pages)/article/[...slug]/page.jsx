@@ -6,7 +6,7 @@ import { articleContent } from "@/app/utils/data";
 export async function getData(id, topic) {
   const res = await fetch(
     `https://newsapi.org/v2/top-headlines?country=us&category=${topic}&apiKey=${process.env.NEWS_API}`,
-    { next: "no-store" }
+    { cache: "no-store" }
   );
   const articles = await res.json();
   const article = articles.articles[id];
