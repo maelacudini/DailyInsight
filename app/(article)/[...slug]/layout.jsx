@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
       title: article.title,
       description: article.description.slice(0, 100) + "...",
       images: [article.image],
-      url: `https://daily-insight-eight.vercel.app/${category}/${id}`,
+      url: `https://dailyinsight-theta.vercel.app/${category}/${id}`,
       locale: "en_US",
       type: "website",
     },

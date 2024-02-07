@@ -20,7 +20,7 @@ export const metadata = {
   keywords: ['Next.js', 'React', 'JavaScript', 'News', 'Web', 'Politics', 'History', 'Culture', 'Technology', 'Business'],
   authors: [{ name: 'Maela Cudini', url: 'https://maelacudini.com' }],
   creator: 'Maela Cudini',
-  metadataBase: new URL('https://daily-insight-eight.vercel.app/'),
+  metadataBase: new URL('https://dailyinsight-theta.vercel.app/'),
   alternates: {
     canonical: '/',
     languages: {
@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: 'For the people | Daily Insight',
     description: 'Daily Insight was founded on the belief that good, open conversations create great, meaningful work.',
-    images: ['https://daily-insight-eight.vercel.app/opengraph-image.png'],
+    images: ['https://dailyinsight-theta.vercel.app/opengraph-image.png'],
     url: `https://daily-insight-eight.vercel.app`,
     locale: "en_US",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     card: "summary_large_image",
     title: 'For the people | Daily Insight',
     description: 'Daily Insight was founded on the belief that good, open conversations create great, meaningful work.',
-    images: ['https://daily-insight-eight.vercel.app/twitter-image.png'],
+    images: ['https://dailyinsight-theta.vercel.app/twitter-image.png'],
   },
   robots: {
     index: true,

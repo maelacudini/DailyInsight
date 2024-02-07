@@ -8,13 +8,13 @@ export const metadata = {
       "en-US": "/en-US",
     },
   },
-  metadataBase: new URL("https://daily-insight-eight.vercel.app/about"),
+  metadataBase: new URL("https://dailyinsight-theta.vercel.app/about"),
   openGraph: {
     title: "About",
     description:
       "Daily Insight was founded on the belief that good, open conversations create great, meaningful work.",
-    images: ["https://daily-insight-eight.vercel.app/icon.png"],
-    url: `https://daily-insight-eight.vercel.app/about`,
+    images: ["https://dailyinsight-theta.vercel.app/icon.png"],
+    url: `https://dailyinsight-theta.vercel.app/about`,
     locale: "en_US",
     type: "website",
   },
@@ -23,7 +23,7 @@ export const metadata = {
     title: "About",
     description:
       "Daily Insight was founded on the belief that good, open conversations create great, meaningful work.",
-    images: ["https://daily-insight-eight.vercel.app/icon.png"],
+    images: ["https://dailyinsight-theta.vercel.app/icon.png"],
   },
 };
 
