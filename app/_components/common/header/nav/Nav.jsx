@@ -1,7 +1,7 @@
 import Link from "next/link";
 import style from "./nav.module.scss";
 import { motion } from "framer-motion";
-import { perspective } from "@/app/utils/animations";
+import { perspective } from "@/app/_utils/animations";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -11,7 +11,7 @@ const links = [
   { title: "daily@insight.com", href: "mailto:" },
 ];
 
-export default function Nav() {
+export default function Nav({ isActive, setIsActive }) {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -36,7 +36,14 @@ export default function Nav() {
               animate="animate"
               exit="exit"
             >
-              <Link href={link.href}>{link.title}</Link>
+              <Link
+                onClick={() => {
+                  setIsActive(!isActive);
+                }}
+                href={link.href}
+              >
+                {link.title}
+              </Link>
             </motion.div>
           </div>
         ))}

@@ -2,7 +2,7 @@
 import style from "./header.module.scss";
 import Nav from "./nav/Nav";
 import Button from "./button/Button";
-import { menu } from "@/app/utils/animations";
+import { menu } from "@/app/_utils/animations";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -19,7 +19,11 @@ export default function Header() {
         initial="closed"
         className={style.menu}
       >
-        <AnimatePresence>{isActive && <Nav key="nav" />}</AnimatePresence>
+        <AnimatePresence>
+          {isActive && (
+            <Nav key="nav" isActive={isActive} setIsActive={setIsActive} />
+          )}
+        </AnimatePresence>
       </motion.div>
 
       <h2 onClick={() => router.push("/")}>Daily Insight</h2>

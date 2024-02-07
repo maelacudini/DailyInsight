@@ -3,7 +3,7 @@ import Lenis from "@studio-freight/lenis"
 import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useEffect } from "react"
-import { pagetransition } from "./utils/animations"
+import { pagetransition } from "./_utils/animations"
 
 export default function Template({ children }) {
     const pathname = usePathname();

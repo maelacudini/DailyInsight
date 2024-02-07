@@ -6,8 +6,12 @@ export default function Footer() {
     <footer id="footer" className={style.footer}>
       <div className={style.row}>
         <div className={style.col}>
-          <h2>Want to collaborate?</h2>
-          <h2>We’d love to hear from you.</h2>
+          <p className="h2">Want to collaborate?</p>
+          <p className="h2">We’d love to hear from you.</p>
+          <p className="gray">
+            Please note that this is a personal project, it's not based on real
+            events or people and it's purely fictional.
+          </p>
           <button className="button">Get in touch</button>
         </div>
         <div className={style.col}>
@@ -16,7 +20,7 @@ export default function Footer() {
             <Link href="#">LinkedIn</Link>
             <Link href="#">Twitter</Link>
             <Link href="#">Patreon</Link>
-            <p>© Daily Insight - 2023</p>
+            <p className="gray">© Daily Insight - 2023</p>
           </div>
         </div>
       </div>

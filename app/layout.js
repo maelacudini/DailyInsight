@@ -1,7 +1,7 @@
 import { DM_Sans } from 'next/font/google'
-import './globals.css'
-import Footer from './components/common/footer/Footer'
-import Header from './components/common/header/Header'
+import './_style/globals.css'
+import Footer from './_components/common/footer/Footer'
+import Header from './_components/common/header/Header'
 
 const font = DM_Sans({ subsets: ['latin'] })
 

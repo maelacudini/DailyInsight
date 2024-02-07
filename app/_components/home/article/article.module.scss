@@ -1,0 +1,20 @@
+.article {
+  p {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .imagecont {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 16px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 15px;
+    }
+  }
+}

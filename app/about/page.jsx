@@ -1,12 +1,12 @@
 import Image from "next/image";
 import style from "./about.module.scss";
-import ny from "../../../public/ny.webp";
-import Slidingtext from "@/app/components/about/slidingtext/Slidingtext";
+import ny from "../../public/ny.webp";
+import Slidingtext from "@/app/_components/about/slidingtext/Slidingtext";
 
 export default function page() {
   return (
-    <>
-      <div className={style.about}>
+    <main>
+      <section className={style.about}>
         <div className={style.row}>
           <div className={style.col}></div>
           <div className={style.col}>
@@ -35,8 +35,8 @@ export default function page() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <Slidingtext />
-    </>
+    </main>
   );
 }
