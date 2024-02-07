@@ -39,6 +39,6 @@ export default async function sitemap() {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
-        ...s, ...scienceUrl, ...technologyUrl, ...sportUrl
+        ...scienceUrl, ...technologyUrl, ...sportUrl
     ]
 }
