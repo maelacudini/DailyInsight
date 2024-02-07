@@ -18,15 +18,16 @@ export default async function page({ params }) {
       <article className={style.row}>
         <div className={style.col}></div>
         <div className={style.col}>
-          <Image
-            className={style.image}
-            src={article.image}
-            alt="image"
-            priority
-            loading="eager"
-            height={300}
-            width={1000}
-          />
+          <div className={style.imgcont}>
+            <Image
+              src={article.image}
+              alt="image"
+              loading="eager"
+              priority
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+            />
+          </div>
           <h2 className={style.title}>{article.title}</h2>
           <p className={style.content}>{article.description}</p>
 

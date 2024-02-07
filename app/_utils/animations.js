@@ -43,7 +43,7 @@ export const perspective = {
 export const pagetransition = {
     initial: {
         y: 20,
-        opacity: 0.1
+        opacity: 0
     },
     animate: {
         y: 0,
@@ -52,6 +52,7 @@ export const pagetransition = {
     },
     exit: {
         y: -20,
+        opacity: 0,
         transition: { duration: 0.5, type: "linear", ease: [0.76, 0, 0.24, 1] }
     }
 }

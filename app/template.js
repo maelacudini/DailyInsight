@@ -1,12 +1,10 @@
 'use client'
 import Lenis from "@studio-freight/lenis"
 import { AnimatePresence, motion } from "framer-motion"
-import { usePathname } from "next/navigation"
 import { useEffect } from "react"
 import { pagetransition } from "./_utils/animations"
 
 export default function Template({ children }) {
-    const pathname = usePathname();
 
     useEffect(() => {
         const lenis = new Lenis()
@@ -22,7 +20,7 @@ export default function Template({ children }) {
 
     return (
         <AnimatePresence mode="wait">
-            <motion.div key={pathname} variants={pagetransition} initial='initial' animate='animate' exit='exit'>
+            <motion.div variants={pagetransition} initial='initial' animate='animate' exit='exit'>
                 {children}
             </motion.div>
         </AnimatePresence>
