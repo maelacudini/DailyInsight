@@ -13,6 +13,7 @@ export default function SwiperComp({ articles, category }) {
       centeredSlides={true}
       slidesPerView={2}
       loop={true}
+      initialSlide={0}
       pagination={{
         clickable: true,
         dynamicBullets: true,

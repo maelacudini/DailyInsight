@@ -4,6 +4,6 @@ export default function robots() {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://dailyinsight-theta.vercel.app//sitemap.xml',
+        sitemap: 'https://dailyinsight-theta.vercel.app/sitemap.xml',
     }
 }
